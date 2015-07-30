@@ -51,7 +51,7 @@ foreach ($states as $name => $defaultValue) {
 }
 
 $useAjax        = $params->get('use_ajax', 0);
-$transationType = $params->get('transaction_type');
+$transactionType = $params->get('transaction_type');
 
 $showLocalization = $params->get('show_departments',1)
                   || $params->get('show_towns',1)
@@ -67,11 +67,11 @@ $showOtherFilters = $params->get('show_number_of_rooms')
                   || $params->get('show_conditions')
                   || $params->get('show_orientation');
 
-if (empty($transationType) && empty($states['filter_transaction_type'])) {
+if (empty($transactionType) && empty($states['filter_transaction_type'])) {
     // Set SELLING as default transaction_type state
     $states['filter_transaction_type'] = 'SELLING';
-} elseif (!empty($transationType) && empty($states['filter_transaction_type'])) {
-    $states['filter_transaction_type'] = $transationType;
+} elseif (!empty($transactionType) && empty($states['filter_transaction_type'])) {
+    $states['filter_transaction_type'] = $transactionType;
 }
 
 $itemid = $params->get('search_itemid', 0);
